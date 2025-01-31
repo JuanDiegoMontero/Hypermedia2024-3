@@ -106,15 +106,31 @@ texture = ExtResource("6_gikvp")
 position = Vector2(486.957, -119.403)
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 5.0
 autostart = true
 
 [node name="EnemySpeedTimer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 10.0
 autostart = true
 
 [node name="TestNode" type="Node2D" parent="."]
 script = ExtResource("6_2w2ct")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 376.0
+offset_top = 232.0
+offset_right = 576.0
+offset_bottom = 312.0
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="on_EnemySpawnTimer_timeout"]
 [connection signal="timeout" from="EnemySpeedTimer" to="." method="on_EnemySpeedTimer_timeout"]
