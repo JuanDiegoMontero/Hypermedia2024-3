@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Enemy
 
-@export var speed: float = 100.0  # Velocidad base. Se puede incrementar con el tiempo.
+@export var speed: float = 100.0  
 
 var player: Node = null  # Referencia al jugador.
 
@@ -17,5 +17,5 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 		# Verificar si el enemigo ha tocado al jugador
-		if global_position.distance_to(player.global_position) < 20:  # Ajusta si es necesario
-			player.morir()  # Llamar a la función que maneja la muerte del jugador
+		if global_position.distance_to(player.global_position) < 20: 
+			player.morir()  
